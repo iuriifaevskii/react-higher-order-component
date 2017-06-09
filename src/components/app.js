@@ -6,7 +6,7 @@ export default class App extends Component {
     return (
       <div>
         <Header />
-        Home page
+        {this.props.children}
       </div>
     );
   }
