@@ -7,6 +7,20 @@ export default function(ComposedComponent){
             router: React.PropTypes.object
         }
 
+        componentWillMount(){
+            if(!this.props.authenticated){
+                this.context.router.push('/');
+            }
+        }
+
+        componentWillUpdate(nextProps){
+            console.log('nextProp.authenticated:',nextProps.authenticated);
+
+            if(!nextProps.authenticated){
+                this.context.router.push('/');
+            }
+        }
+
         render(){
             //console.log('Rendering:',ComposedComponent);
             //console.log('this.props.authenticated:',this.props.authenticated);
