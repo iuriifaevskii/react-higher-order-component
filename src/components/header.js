@@ -5,7 +5,7 @@ import * as actions from '../actions'; //import all actions creator
 
 class Header extends Component{
     authButton(){
-        console.log(this.props.authenticated);
+        //console.log(this.props.authenticated);
         if(this.props.authenticated){
             return <button onClick={ () => this.props.authenticate(false) }>Sign Out</button>;
         }
